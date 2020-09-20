@@ -1,0 +1,24 @@
+[package]
+version = "0.9.0"
+authors = [
+  "Noah Hüsser <nh@technokrat.ch>",
+]
+description = "Peripheral access API for nrf52811 microcontrollers"
+documentation = "https://docs.rs/nrf52840-pac"
+keywords = ["no-std", "arm", "cortex-m", "nrf52", "nrf52811"]
+license = "MIT OR Apache-2.0"
+name = "nrf52811-pac"
+repository = "https://github.com/nrf-rs/nrf52811-pac"
+edition = "2018"
+
+[dependencies]
+bare-metal = "0.2.4"
+vcell = "0.1"
+cortex-m = ">= 0.5.8, < 0.7"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.8"
+
+[features]
+rt = ["cortex-m-rt/device"]
