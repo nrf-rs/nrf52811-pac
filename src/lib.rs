@@ -35,8 +35,8 @@ extern "C" {
     fn POWER_CLOCK();
     fn RADIO();
     fn UARTE0_UART0();
-    fn TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1();
-    fn SPIM0_SPIS0_SPI0();
+    fn TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0();
+    fn SPIM1_SPIS1_SPI1();
     fn GPIOTE();
     fn SAADC();
     fn TIMER0();
@@ -78,10 +78,10 @@ pub static __INTERRUPTS: [Vector; 30] = [
         _handler: UARTE0_UART0,
     },
     Vector {
-        _handler: TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1,
+        _handler: TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0,
     },
     Vector {
-        _handler: SPIM0_SPIS0_SPI0,
+        _handler: SPIM1_SPIS1_SPI1,
     },
     Vector { _reserved: 0 },
     Vector { _handler: GPIOTE },
@@ -123,10 +123,10 @@ pub enum Interrupt {
     RADIO = 1,
     #[doc = "2 - UARTE0_UART0"]
     UARTE0_UART0 = 2,
-    #[doc = "3 - TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1"]
-    TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1 = 3,
-    #[doc = "4 - SPIM0_SPIS0_SPI0"]
-    SPIM0_SPIS0_SPI0 = 4,
+    #[doc = "3 - TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0"]
+    TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0 = 3,
+    #[doc = "4 - SPIM1_SPIS1_SPI1"]
+    SPIM1_SPIS1_SPI1 = 4,
     #[doc = "6 - GPIOTE"]
     GPIOTE = 6,
     #[doc = "7 - SAADC"]
@@ -378,68 +378,68 @@ impl Deref for UARTE0 {
 #[doc = "UART with EasyDMA"]
 pub mod uarte0;
 #[doc = "Serial Peripheral Interface 0"]
-pub struct SPI1 {
+pub struct SPI0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SPI1 {}
-impl SPI1 {
+unsafe impl Send for SPI0 {}
+impl SPI0 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const spi1::RegisterBlock {
+    pub const fn ptr() -> *const spi0::RegisterBlock {
         0x4000_3000 as *const _
     }
 }
-impl Deref for SPI1 {
-    type Target = spi1::RegisterBlock;
+impl Deref for SPI0 {
+    type Target = spi0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*SPI1::ptr() }
+        unsafe { &*SPI0::ptr() }
     }
 }
 #[doc = "Serial Peripheral Interface 0"]
-pub mod spi1;
+pub mod spi0;
 #[doc = "Serial Peripheral Interface Master with EasyDMA 0"]
-pub struct SPIM1 {
+pub struct SPIM0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SPIM1 {}
-impl SPIM1 {
+unsafe impl Send for SPIM0 {}
+impl SPIM0 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const spim1::RegisterBlock {
+    pub const fn ptr() -> *const spim0::RegisterBlock {
         0x4000_3000 as *const _
     }
 }
-impl Deref for SPIM1 {
-    type Target = spim1::RegisterBlock;
+impl Deref for SPIM0 {
+    type Target = spim0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*SPIM1::ptr() }
+        unsafe { &*SPIM0::ptr() }
     }
 }
 #[doc = "Serial Peripheral Interface Master with EasyDMA 0"]
-pub mod spim1;
+pub mod spim0;
 #[doc = "SPI Slave 0"]
-pub struct SPIS1 {
+pub struct SPIS0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SPIS1 {}
-impl SPIS1 {
+unsafe impl Send for SPIS0 {}
+impl SPIS0 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const spis1::RegisterBlock {
+    pub const fn ptr() -> *const spis0::RegisterBlock {
         0x4000_3000 as *const _
     }
 }
-impl Deref for SPIS1 {
-    type Target = spis1::RegisterBlock;
+impl Deref for SPIS0 {
+    type Target = spis0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*SPIS1::ptr() }
+        unsafe { &*SPIS0::ptr() }
     }
 }
 #[doc = "SPI Slave 0"]
-pub mod spis1;
+pub mod spis0;
 #[doc = "I2C compatible Two-Wire Interface"]
 pub struct TWI0 {
     _marker: PhantomData<*const ()>,
@@ -504,60 +504,60 @@ impl Deref for TWIS0 {
 #[doc = "I2C compatible Two-Wire Slave Interface with EasyDMA"]
 pub mod twis0;
 #[doc = "Serial Peripheral Interface 1"]
-pub struct SPI0 {
+pub struct SPI1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SPI0 {}
-impl SPI0 {
+unsafe impl Send for SPI1 {}
+impl SPI1 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const spi1::RegisterBlock {
+    pub const fn ptr() -> *const spi0::RegisterBlock {
         0x4000_4000 as *const _
     }
 }
-impl Deref for SPI0 {
-    type Target = spi1::RegisterBlock;
+impl Deref for SPI1 {
+    type Target = spi0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*SPI0::ptr() }
+        unsafe { &*SPI1::ptr() }
     }
 }
 #[doc = "Serial Peripheral Interface Master with EasyDMA 1"]
-pub struct SPIM0 {
+pub struct SPIM1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SPIM0 {}
-impl SPIM0 {
+unsafe impl Send for SPIM1 {}
+impl SPIM1 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const spim1::RegisterBlock {
+    pub const fn ptr() -> *const spim0::RegisterBlock {
         0x4000_4000 as *const _
     }
 }
-impl Deref for SPIM0 {
-    type Target = spim1::RegisterBlock;
+impl Deref for SPIM1 {
+    type Target = spim0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*SPIM0::ptr() }
+        unsafe { &*SPIM1::ptr() }
     }
 }
 #[doc = "SPI Slave 1"]
-pub struct SPIS0 {
+pub struct SPIS1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for SPIS0 {}
-impl SPIS0 {
+unsafe impl Send for SPIS1 {}
+impl SPIS1 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const spis1::RegisterBlock {
+    pub const fn ptr() -> *const spis0::RegisterBlock {
         0x4000_4000 as *const _
     }
 }
-impl Deref for SPIS0 {
-    type Target = spis1::RegisterBlock;
+impl Deref for SPIS1 {
+    type Target = spis0::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*SPIS0::ptr() }
+        unsafe { &*SPIS1::ptr() }
     }
 }
 #[doc = "GPIO Tasks and Events"]
@@ -1132,24 +1132,24 @@ pub struct Peripherals {
     pub UART0: UART0,
     #[doc = "UARTE0"]
     pub UARTE0: UARTE0,
-    #[doc = "SPI1"]
-    pub SPI1: SPI1,
-    #[doc = "SPIM1"]
-    pub SPIM1: SPIM1,
-    #[doc = "SPIS1"]
-    pub SPIS1: SPIS1,
-    #[doc = "TWI0"]
-    pub TWI0: TWI0,
-    #[doc = "TWIM0"]
-    pub TWIM0: TWIM0,
-    #[doc = "TWIS0"]
-    pub TWIS0: TWIS0,
     #[doc = "SPI0"]
     pub SPI0: SPI0,
     #[doc = "SPIM0"]
     pub SPIM0: SPIM0,
     #[doc = "SPIS0"]
     pub SPIS0: SPIS0,
+    #[doc = "TWI0"]
+    pub TWI0: TWI0,
+    #[doc = "TWIM0"]
+    pub TWIM0: TWIM0,
+    #[doc = "TWIS0"]
+    pub TWIS0: TWIS0,
+    #[doc = "SPI1"]
+    pub SPI1: SPI1,
+    #[doc = "SPIM1"]
+    pub SPIM1: SPIM1,
+    #[doc = "SPIS1"]
+    pub SPIS1: SPIS1,
     #[doc = "GPIOTE"]
     pub GPIOTE: GPIOTE,
     #[doc = "SAADC"]
@@ -1249,13 +1249,13 @@ impl Peripherals {
             UARTE0: UARTE0 {
                 _marker: PhantomData,
             },
-            SPI1: SPI1 {
+            SPI0: SPI0 {
                 _marker: PhantomData,
             },
-            SPIM1: SPIM1 {
+            SPIM0: SPIM0 {
                 _marker: PhantomData,
             },
-            SPIS1: SPIS1 {
+            SPIS0: SPIS0 {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {
@@ -1267,13 +1267,13 @@ impl Peripherals {
             TWIS0: TWIS0 {
                 _marker: PhantomData,
             },
-            SPI0: SPI0 {
+            SPI1: SPI1 {
                 _marker: PhantomData,
             },
-            SPIM0: SPIM0 {
+            SPIM1: SPIM1 {
                 _marker: PhantomData,
             },
-            SPIS0: SPIS0 {
+            SPIS1: SPIS1 {
                 _marker: PhantomData,
             },
             GPIOTE: GPIOTE {

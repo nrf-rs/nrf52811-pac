@@ -16641,7 +16641,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       </registers>
     </peripheral>
     <peripheral>
-      <name>SPI1</name>
+      <name>SPI0</name>
       <description>Serial Peripheral Interface 0</description>
       <baseAddress>0x40003000</baseAddress>
       <headerStructName>SPI</headerStructName>
@@ -16651,7 +16651,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1</name>
+        <name>TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0</name>
         <value>3</value>
       </interrupt>
       <groupName>SPI</groupName>
@@ -17031,10 +17031,10 @@ POSSIBILITY OF SUCH DAMAGE.\n
       </registers>
     </peripheral>
     <peripheral>
-      <name>SPIM1</name>
+      <name>SPIM0</name>
       <description>Serial Peripheral Interface Master with EasyDMA 0</description>
       <baseAddress>0x40003000</baseAddress>
-      <alternatePeripheral>SPI1</alternatePeripheral>
+      <alternatePeripheral>SPI0</alternatePeripheral>
       <headerStructName>SPIM</headerStructName>
       <addressBlock>
         <offset>0</offset>
@@ -17042,7 +17042,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1</name>
+        <name>TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0</name>
         <value>3</value>
       </interrupt>
       <groupName>SPIM</groupName>
@@ -17987,10 +17987,10 @@ POSSIBILITY OF SUCH DAMAGE.\n
       </registers>
     </peripheral>
     <peripheral>
-      <name>SPIS1</name>
+      <name>SPIS0</name>
       <description>SPI Slave 0</description>
       <baseAddress>0x40003000</baseAddress>
-      <alternatePeripheral>SPI1</alternatePeripheral>
+      <alternatePeripheral>SPI0</alternatePeripheral>
       <headerStructName>SPIS</headerStructName>
       <addressBlock>
         <offset>0</offset>
@@ -17998,7 +17998,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1</name>
+        <name>TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0</name>
         <value>3</value>
       </interrupt>
       <groupName>SPIS</groupName>
@@ -18838,7 +18838,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <name>TWI0</name>
       <description>I2C compatible Two-Wire Interface</description>
       <baseAddress>0x40003000</baseAddress>
-      <alternatePeripheral>SPI1</alternatePeripheral>
+      <alternatePeripheral>SPI0</alternatePeripheral>
       <headerStructName>TWI</headerStructName>
       <addressBlock>
         <offset>0</offset>
@@ -18846,7 +18846,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1</name>
+        <name>TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0</name>
         <value>3</value>
       </interrupt>
       <groupName>TWI</groupName>
@@ -19743,7 +19743,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <name>TWIM0</name>
       <description>I2C compatible Two-Wire Master Interface with EasyDMA</description>
       <baseAddress>0x40003000</baseAddress>
-      <alternatePeripheral>SPI1</alternatePeripheral>
+      <alternatePeripheral>SPI0</alternatePeripheral>
       <headerStructName>TWIM</headerStructName>
       <addressBlock>
         <offset>0</offset>
@@ -19751,7 +19751,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1</name>
+        <name>TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0</name>
         <value>3</value>
       </interrupt>
       <groupName>TWIM</groupName>
@@ -21052,7 +21052,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
       <name>TWIS0</name>
       <description>I2C compatible Two-Wire Slave Interface with EasyDMA</description>
       <baseAddress>0x40003000</baseAddress>
-      <alternatePeripheral>SPI1</alternatePeripheral>
+      <alternatePeripheral>SPI0</alternatePeripheral>
       <headerStructName>TWIS</headerStructName>
       <addressBlock>
         <offset>0</offset>
@@ -21060,7 +21060,7 @@ POSSIBILITY OF SUCH DAMAGE.\n
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>TWIM0_TWIS0_TWI0_SPIM1_SPIS1_SPI1</name>
+        <name>TWIM0_TWIS0_TWI0_SPIM0_SPIS0_SPI0</name>
         <value>3</value>
       </interrupt>
       <groupName>TWIS</groupName>
@@ -22230,32 +22230,32 @@ POSSIBILITY OF SUCH DAMAGE.\n
         </register>
       </registers>
     </peripheral>
-    <peripheral derivedFrom="SPI1">
-      <name>SPI0</name>
+    <peripheral derivedFrom="SPI0">
+      <name>SPI1</name>
       <description>Serial Peripheral Interface 1</description>
       <baseAddress>0x40004000</baseAddress>
       <interrupt>
-        <name>SPIM0_SPIS0_SPI0</name>
+        <name>SPIM1_SPIS1_SPI1</name>
         <value>4</value>
       </interrupt>
     </peripheral>
-    <peripheral derivedFrom="SPIM1">
-      <name>SPIM0</name>
+    <peripheral derivedFrom="SPIM0">
+      <name>SPIM1</name>
       <description>Serial Peripheral Interface Master with EasyDMA 1</description>
       <baseAddress>0x40004000</baseAddress>
-      <alternatePeripheral>SPI0</alternatePeripheral>
+      <alternatePeripheral>SPI1</alternatePeripheral>
       <interrupt>
-        <name>SPIM0_SPIS0_SPI0</name>
+        <name>SPIM1_SPIS1_SPI1</name>
         <value>4</value>
       </interrupt>
     </peripheral>
-    <peripheral derivedFrom="SPIS1">
-      <name>SPIS0</name>
+    <peripheral derivedFrom="SPIS0">
+      <name>SPIS1</name>
       <description>SPI Slave 1</description>
       <baseAddress>0x40004000</baseAddress>
-      <alternatePeripheral>SPI0</alternatePeripheral>
+      <alternatePeripheral>SPI1</alternatePeripheral>
       <interrupt>
-        <name>SPIM0_SPIS0_SPI0</name>
+        <name>SPIM1_SPIS1_SPI1</name>
         <value>4</value>
       </interrupt>
     </peripheral>
