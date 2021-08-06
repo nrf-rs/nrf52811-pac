@@ -1,3 +1,5 @@
+**MOVED!** This repository has been moved to <https://github.com/nrf-rs/nrf-pacs>.
+
 # nrf52811
 
 > Peripheral access API for nrf52811 microcontrollers
